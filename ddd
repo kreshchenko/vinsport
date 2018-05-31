@@ -1,0 +1,114 @@
+
+<p>До вашої уваги представляємо розклад запланованих текстових трансляцій матчів Вищої та Другої ліги футзал.</p>
+
+<p><b> Вища ліша. 19.12.2015</b><br>
+<a href="http://vinsport.info/index.php?view=online&id=4">11:00 МФК "Блік" - МФК "Балкани"</a><br>
+
+<a href="http://vinsport.info/index.php?view=online&id=5">12:00 МФК "ДФС" - МФК "Інтер+"</a><br>
+
+<a href="http://vinsport.info/index.php?view=online&id=6">12:00 МФК "Батерфляй" - МФК "Енергетик"</a>
+</p>
+
+<p>
+<b>Друга ліга. 20.12.2015</b><br>
+<a href="http://vinsport.info/index.php?view=online&id=7">12:30 МФК "Cпарта" - МФК "Володимир-2"</a>
+</p>
+
+
+
+
+
+<div style="font-size: 15px; font-weight: bold;" id="tm1">0</div>
+                                        <script>
+                                            var t=setInterval("tm()",1000);
+                                            var xt2=0;
+                                            var xt3=0;
+                                            function tm() {
+                                                xt2++;
+                                                if(xt2>59) {
+                                                    xt3++;
+                                                    xt2=0;
+                                                }
+                                                if(xt2>9) {
+                                                    xt=xt2;
+                                                } else {
+                                                    xt="0"+xt2;
+                                                }
+
+                                                document.getElementById("tm1").innerHTML=xt3+"' "+xt+"\"";
+                                            }
+                                            function tm2() {
+                                                document.getElementById("tm2").innerHTML+=document.getElementById("tm1").innerHTML+" | ";
+                                                xt++;
+                                            }
+                                        </script>
+<?php
+
+$result = mysql_query("SELECT * FROM textonline WHERE onlineID = '$id' ORDER BY id");
+//$myonline = mysql_fetch_array($result);
+
+$result2 = mysql_query ("SELECT * FROM onlinelist WHERE id='$id'");
+$myonline2 = mysql_fetch_array($result2);
+
+?>
+
+<!-- ==================start content body section=============== -->
+<section id="contentSection">
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-8">
+            <div class="left_content">
+                <div class="single_page">
+                    <h1>LIVE. <?php echo $myonline2['team1'];?> - <?php echo $myonline2['team2'];?></h1>
+
+                    <div class="single_page_content">
+                        <div class="row">
+                            <div style="text-align: center" class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                               <h2> <?php echo $myonline2['team1'];?></h2><br>
+                                <img width="35%" src="<?php echo $myonline2['logo1'];?>">
+                            </div>
+                            <div style="text-align: center"  class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <h1>2:0</h1>
+                                <span style="margin-top: -15px;"><?php echo $myonline2['misce'];?></h2></span>
+                            </div>
+                            <div style="text-align: center"  class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <h2><?php echo $myonline2['team2'];?></h2><br>
+                                <img width="35%" src="<?php echo $myonline2['logo2'];?>">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+                                <table class="table table-hover">
+                                    <tr>
+
+                                        <?php
+                                        while($row = mysql_fetch_array($result)) {
+                                            $time = $row['time'];
+                                            $starttime=$row['starttime'];
+
+                                            $timez = floor (($time-$starttime)/60) + 1;
+
+                                            echo '<tr><td>'.$starttime.'</td><td style="text-align: center;">'.$row['text'] . "</td></tr>";
+                                        }
+                                        ?>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <aside class="right_content">
+
+                <!-- sponsor add -->
+                <?php include ("reklama.php");?>
+                <!-- End sponsor add -->
+
+            </aside>
+        </div>
+    </div>
+</section>
+<!-- ==================End content body section=============== -->

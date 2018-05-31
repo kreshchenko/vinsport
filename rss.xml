@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<body><rss version="2.0">
+    <channel>
+        <title>Название RSS-канала</title>
+        <link>ссылка на сайт канала
+        <description>Описание канала (кратко)</description>
+        <item>
+            <title>Название статьи </title>
+            <link>Ссылка на статью, новость в интернете
+            <description>Описание</description>
+            <author>Имя автора</author>
+            <pubdate>Дата публикации</pubdate>
+        </item>
+        <item>
+            <title>Жмеринка прийме 1 тур Чемпіонату України з волейболу</title>
+            <link>Ссылка на статью, новость в интернете
+            <description>Чемпіонат України "Дитяча ліга" стартував у Жмеринці</description>
+            <author>Вінницький спорт</author>
+            <pubdate>2015-12-10</pubdate>
+        </item>
+
+
+        <item>
+            <title>Чемпіонат міста. Вінницькі зубри - ВНТУ-Баскет</title>
+            <link>http://vinsport.info/index.php?view=news&id=53</link>
+            <description>Гра Вінницької аматорської баскетбольної ліги</description>
+            <author>Вінницький спорт</author>
+            <pubdate>2015-12-10</pubdate>
+        </item>
+
+
+        <item>
+            <title>Бронза футзальної першості ВФСТ "Колос" у Вінничан</title>
+            <link>http://vinsport.info/index.php?view=news&id=52</link>
+            <description>ПІДСУМКИ ФУТЗАЛЬНОЇ ПЕРШОСТІ ВФСТ «КОЛОС»-2015 У БЕРЕГОВОМУ</description>
+            <author>Вінницький спорт</author>
+            <pubdate>2015-12-10</pubdate>
+        </item>
+
+
+        <item>
+            <title>Анонс: Сезон кульової стрільби закривають обласним Кубком</title>
+            <link>http://vinsport.info/index.php?view=news&id=51</link>
+            <description>Останні змагання з кульової стрільби у 2015 році</description>
+            <author>Вінницький спорт</author>
+            <pubdate>2015-12-10</pubdate>
+        </item>
+
+
+    </channel>
+</rss>
+
+</body>
